@@ -1,8 +1,12 @@
 <%= form_with model: @boat do |form| %>
-    <%= form.file_field :image %>
+    <%= form.file_field :avatar %>
     <p>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
+    </p>
+    <p>
+      <%= form.label :country_code %><br />
+    <%= form.country_select :country_code %>
     </p>
     <p>
     <%= form.submit %>

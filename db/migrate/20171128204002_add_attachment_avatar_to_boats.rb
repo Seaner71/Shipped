@@ -1,4 +1,4 @@
-class AddAttachmentImageToBoats < ActiveRecord::Migration[4.2]
+class AddAttachmentAvatarToBoats < ActiveRecord::Migration[4.2]
   def self.up
     change_table :boats do |t|
       t.attachment :avatar

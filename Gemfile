@@ -7,6 +7,8 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'country_select'
+
 gem 'devise'
 
 gem 'rb-readline'
