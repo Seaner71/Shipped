@@ -1,3 +1,6 @@
+<%= link_to "Cancel", boats_path %>
+<%= link_to "Edit Boat", edit_boat_path(@boat) %>
+<%= link_to "Delete Boat", boat_path(@boat), method: :delete %>
 <div class="boat-name">
   <% @boat.name %>
 </div>
