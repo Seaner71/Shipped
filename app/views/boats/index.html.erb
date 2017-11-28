@@ -1,10 +1,13 @@
 <h1>DIS WHERE ALL DA BOATS GO</h1>
-
+<br>
 <% @boats.each do |boat| %>
-  <li><%= boat.name %></li>
+<br>
+  <li>NAME: <%= boat.name %></li>
   <br>
-  <%= link_to image_tag(boat.image.url(:medium)), boat_path(boat) %>
-
+  <li>LOCATION: <%= boat.country_code %></li>
+  <br>
+  <%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %>
+<br>
 
 
 <% end %>
