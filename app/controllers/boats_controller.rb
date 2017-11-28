@@ -24,6 +24,6 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:avatar, :name)
+    params.require(:boat).permit(:image, :name)
   end
 end
