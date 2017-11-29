@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     @boats = Boat.all
   end
@@ -13,7 +14,8 @@ class BoatsController < ApplicationController
   end
 
   def create
-    @boat = Boat.new(boat_params)
+    # @boat = Boat.new(boat_params) //original one
+    @boat = current_user.posts.new(boat_params)
     if @boat.save
       redirect_to boats_path
     else
