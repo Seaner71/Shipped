@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
-
   belongs_to :user
+  has_and_belongs_to_many :boats
 
   register_currency :usd
   monetize :price_cents, currency => :usd,
