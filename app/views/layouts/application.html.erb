@@ -6,8 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <nav><%= link_to 'Home', boats_path %>
-    <%= link_to 'New Boat', new_boat_path %></nav>
+    <nav>
+       <%= link_to 'Boat Index', boats_path %>
+       <%= link_to 'New Boat', new_boat_path %>
+       <%= link_to  'New Job', new_job_path %>
+       <%= link_to  'Job Index', jobs_path %>
+     </nav>
   </head>
 
   <body>
