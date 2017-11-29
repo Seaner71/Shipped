@@ -7,6 +7,12 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'money'
+
+gem 'monetize'
+
+gem 'money-rails'
+
 gem 'country_select'
 
 gem 'devise'
