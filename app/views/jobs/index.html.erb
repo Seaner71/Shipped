@@ -2,8 +2,13 @@
 <br>
 <% @jobs.each do |job| %>
 <br>
-  <li><%= job.origin %></li>
-  <li><%= job.destination %></li>
+
+  <li><%= job.name %></li>
   <li><%= job.price_cents %></li>
+   <li><%= job.origin %></li>
+   <li><%= job.destination %></li>
+   <li><%= job.description %></li>
+   <li><%= job.containers_needed %></li>
+
 
 <% end %>

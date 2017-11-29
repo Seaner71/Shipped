@@ -22,9 +22,17 @@
       <%= form.text_field :price_cents %>
     </p>
 
-    <p>
-   <%= form.label :container_capacity %><br />
-   <%= form.number_field :container_capacity, min: 1, max: 50 %>
+    <%= form.label :name %><br>
+   <%= form.text_field :name %>
+   </p>
+   <p>
+   <%= form.label :description %><br>
+   <%= form.text_area :description %>
+   </p>
+
+   <p>
+   <%= form.label :containers_needed %><br />
+   <%= form.number_field :containers_needed, min: 1, max: 50 %>
    </p>
 
     <p>
