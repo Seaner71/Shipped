@@ -1,7 +1,8 @@
 <h1>DIS WHERE ALL DA BOATS GO</h1>
 <br>
 <% @boats.each do |boat| %>
-<br>
+  <li>USER EMAIL: <%= boat.user.email %> </li>
+  <br>
   <li>NAME: <%= boat.name %></li>
   <br>
   <li>LOCATION: <%= boat.country_code %></li>
