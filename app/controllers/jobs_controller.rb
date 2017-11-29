@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!
 
 
     def index
@@ -14,7 +15,7 @@ class JobsController < ApplicationController
     end
 
     def create
-      @job = Job.new(job_params)
+      @job = current_user.jobs.new(job_params)
       if @job.save
         redirect_to jobs_path
       else
