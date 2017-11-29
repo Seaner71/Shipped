@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171129161522) do
-=======
-ActiveRecord::Schema.define(version: 20171129071917) do
->>>>>>> 8355442a97a98edbaf895498e2897c5b334a1ffc
+ActiveRecord::Schema.define(version: 20171129170035) do
 
   create_table "boats", force: :cascade do |t|
     t.string "name"
@@ -26,6 +22,7 @@ ActiveRecord::Schema.define(version: 20171129071917) do
     t.datetime "avatar_updated_at"
     t.string "country_code"
     t.integer "user_id"
+    t.integer "container_capacity"
   end
 
   create_table "jobs", force: :cascade do |t|
