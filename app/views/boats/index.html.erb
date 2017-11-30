@@ -1,13 +1,14 @@
 <h1>All Boats</h1>
-<br>
-<% @boats.each do |boat| %>
 
-<h3>NAME: <%= boat.name %></h3>
-<%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %>
-<ul>
-  <li>USER ID: <%= boat.user_id %> </li>
-  <li>LOCATION: <%= boat.country_code %></li>
-  <li>CONTAINER CAPACITY: <%= boat.container_capacity %></li>
-</ul>
-<% end %>
-<hr />
+<div class="boat">
+  <% @boats.each do |boat| %>
+  <h3>NAME: <%= boat.name %></h3>
+  <%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %>
+  <ul>
+    <li>USER ID: <%= boat.user_id %> </li>
+    <li>LOCATION: <%= boat.country_code %></li>
+    <li>CONTAINER CAPACITY: <%= boat.container_capacity %></li>
+  </ul>
+  <hr />
+  <% end %>
+</div>
