@@ -24,7 +24,7 @@ class JobsController < ApplicationController
       end
 
       def edit
-        @jobs = Job.find(params[:id])
+        @job = Job.find(params[:id])
       end
 
       def update
