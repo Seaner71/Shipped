@@ -1,4 +1,8 @@
-<h1>each boat</h1>
+
+          <div class="user-name">
+              <%= link_to boat.name, boat_path(boat.id) %>
+
+
           <div class="boat-avatar">
           <%= image_tag boat.avatar.url(:medium) %>
-        </div>
+          </div>
