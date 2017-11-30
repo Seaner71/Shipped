@@ -1,15 +1,13 @@
-<h1>DIS WHERE ALL DA BOATS GO</h1>
+<h1>All Boats</h1>
 <br>
 <% @boats.each do |boat| %>
-  <li>USER EMAIL: <%= boat.user_id %> </li>
-  <br>
-  <li>NAME: <%= boat.name %></li>
-  <br>
+
+<h3>NAME: <%= boat.name %></h3>
+<%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %>
+<ul>
+  <li>USER ID: <%= boat.user_id %> </li>
   <li>LOCATION: <%= boat.country_code %></li>
-  <br>
   <li>CONTAINER CAPACITY: <%= boat.container_capacity %></li>
-  <%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %>
-<br>
-
-
+</ul>
 <% end %>
+<hr />

@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+
+
+/* Color Scheme:
+blues: #152b69, #446ca3, #239ebb, #91becc
+grey: #e1dad0
+vanilla: #fffcee*/
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #fffcee;
+}
+
+.container {
+  padding:15px
+}
+
+h1 {
+  margin: 20px 0px 20px 20px;
+  color: #446ca3;
+}
+
+nav {
+  background-color: #446ca3;
+  text-align: right;
+  padding-left: 45px;
+}
+
+nav a {
+  line-height: 45px;
+  color: #e1dad0;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-right: 20px;
+}
+
+nav a:hover {
+  color: #fffcee;
+}
+
+form {
+  margin-left: 20px;
+}
+
+input, select {
+  height: 26px;
+  width: 250px;
+  border: solid 1px #aaa;
+  border-radius: 3px;
+}
+
+label {
+  margin: 24px 0px -16px 0px;
+  display: block;
+}
+
+textarea {
+  width: 250px;
+  height: 100px;
+  border: solid 1px #aaa;
+  border-radius: 3px;
+}
+
+input[type="submit" i] {
+  margin-top:15px;
+  background-color: #446ca3;
+  height:35px;
+  color: #e1dad0;
+  font-size: 16px;
+  text-transform: uppercase;
+}
