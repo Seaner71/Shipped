@@ -12,6 +12,8 @@ class Job < ApplicationRecord
          validates :name, uniqueness: true
          validate :check_origin_and_destination
 
+         validates :user_id, presence: true
+         
          private
          def check_origin_and_destination
            errors.add(:destination, "can not be the same as origin") if origin == destination
