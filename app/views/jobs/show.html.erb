@@ -2,12 +2,11 @@
 <%= link_to "Edit Job", edit_job_path(@job) %>
 <%= link_to "Delete Job", job_path(@job), method: :delete %>
 <div class="job-name">
-  <% @jobs.each do |job| %>
-  <li><%= job.name %></li>
-  <li><%= job.price_cents %></li>
-   <li><%= job.origin %></li>
-   <li><%= job.destination %></li>
-   <li><%= job.description %></li>
-   <li><%= job.containers_needed %></li>
-  <% end %>
+  <li>Job id: <%= @job.name %></li>
+  <li>Job cost: <%= @job.price_cents %></li>
+   <li>Job origin: <%= @job.origin %></li>
+   <li>Job destination: <%= @job.destination %></li>
+   <li>Job description: <%= @job.description %></li>
+   <li>Job containers: <%= @job.containers_needed %></li>
+
 </div>
