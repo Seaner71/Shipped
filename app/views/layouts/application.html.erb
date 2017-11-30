@@ -3,10 +3,12 @@
   <head>
     <title>Shipped</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  </head>
 
+  <body>
     <nav>
     <%= link_to 'Log Out', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure you want to log out?"} %>
        <%= link_to 'Boat Index', boats_path %>
@@ -14,12 +16,11 @@
        <%= link_to  'New Job', new_job_path %>
        <%= link_to  'Job Index', jobs_path %>
      </nav>
-
-  </head>
-
-  <body>
     <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+
+  <div class="container">
     <%= yield %>
+  </div>
   </body>
 </html>
