@@ -2,7 +2,8 @@
 <%= link_to "Edit Job", edit_job_path(@job) %>
 <%= link_to "Delete Job", job_path(@job), method: :delete %>
 <div class="job-name">
-  <li>Job id: <%= @job.name %></li>
+  <li>Job name: <%= @job.name %></li>
+  <li>Job id: <%= @job.id %></li>
   <li>Job cost: <%= @job.price_cents %></li>
    <li>Job origin: <%= @job.origin %></li>
    <li>Job destination: <%= @job.destination %></li>
