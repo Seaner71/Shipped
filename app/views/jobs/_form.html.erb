@@ -1,21 +1,21 @@
 
 <%= form_with model: @job, local: true do |form| %>
 
-    <% if @job.errors.any? %>
+<% if @job.errors.any? %>
 
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@job.errors.count, "error") %> prohibited
-          this article from being saved:
-        </h2>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@job.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
 
-        <ul>
-          <% @job.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
     <p>
       <%= form.label :price %><br>

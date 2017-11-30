@@ -3,6 +3,7 @@
 <% @jobs.each do |job| %>
 <br>
   <li><%= link_to "Job", job_path(job.id)%></li>
+  <li><%= job.user_id%></li>
   <li><%= job.name %></li>
   <li><%= job.price_cents %></li>
    <li><%= job.origin %></li>
