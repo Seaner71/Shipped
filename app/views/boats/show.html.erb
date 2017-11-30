@@ -1,6 +1,17 @@
-<%= link_to "Cancel", boats_path %>
-<%= link_to "Edit Boat", edit_boat_path(@boat) %>
-<%= link_to "Delete Boat", boat_path(@boat), method: :delete %>
+<% if @boat.user.id == current_user.id %>
+  <div class="text-center edit-links">
+    <%= link_to "Cancel", boats_path %>
+    |
+    <%= link_to "Edit Boat", edit_boat_path(@boat) %>
+    <%= link_to 'Destroy', @boat, :method => :delete %>
+  </div>
+<% else %>
+  <div class="text-center edit-links">
+    <%= link_to "Back", boats_path %>
+  </div>
+<% end %>
+
+
 <div class="boat-name">
   <% @boat.name %>
 </div>
