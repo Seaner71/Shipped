@@ -11,3 +11,25 @@
    <li>Job containers: <%= @job.containers_needed %></li>
 
 </div>
+
+<p>My Boats</p>
+<%if current_user.boats.empty? %>
+  <p>You have no boats</p>
+  <% end %>
+<% current_user.boats.each do |boat| %>
+      <li>Boat name: <%= boat.name %></li>
+      <li>Boat id: <%= boat.id %></li>
+      <li>Boat Capacity: <%= boat.container_capacity %></li>
+    <% end %>
+<p>Assign job to boat</p>
+    <%= form_with model: @boats_and_job, local: true do |form| %>
+
+        <%= form.label 'my boats' %> <br>
+        <%= form.select 'boat', options_from_collection_for_select(current_user.boats.all, 'id', 'name', 'container_capacity') %> <br>
+        <%= form.label 'my boat id' %> <br>
+        <%= form.select 'boat', options_from_collection_for_select(current_user.boats.all, 'id', 'id') %>
+        <p>
+          <%= form.submit %>
+        </p>
+
+      <% end %>
