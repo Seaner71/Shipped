@@ -1,5 +1,9 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!
+  before_action :owned_job, only: [:edit, :update, :destroy]
+  before_action :set_job, only: [:show, :edit, :update, :destroy]
+
+
 
 
     def index
@@ -11,7 +15,7 @@ class JobsController < ApplicationController
     end
 
     def new
-      @job = Job.new
+      @job = current_user.jobs.new
     end
 
     def create
@@ -45,6 +49,19 @@ class JobsController < ApplicationController
     private
 
     def job_params
-      params.require(:job).permit(:origin, :destination, :price_cents, :containers_needed, :description, :name)
+      params.require(:job).permit(:origin, :destination, :price_cents, :containers_needed, :description, :name, :user_id)
+    end
+
+    def set_job
+      @job = Job.find(params[:id])
+    end
+
+    def owned_job
+    @job = Job.find(params[:id])
+    unless current_user == @job.user
+      flash[:alert] = "That job doesn't belong to you!"
+      redirect_to jobs_path
     end
   end
+
+end
