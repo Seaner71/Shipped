@@ -1,30 +1,10 @@
-<<<<<<< HEAD
 <h1>All Boats</h1>
-=======
-<h1>DIS WHERE ALL DA BOATS GO</h1>
-<br>
-<% @boats.each do |boat| %>
-  <li>USER EMAIL: <%= boat.user_id %> </li> 
-  <br>
-  <li>NAME: <%= boat.name %></li>
-  <br>
-  <li>LOCATION: <%= boat.country_code %></li>
-  <br>
-  <li>CONTAINER CAPACITY: <%= boat.container_capacity %></li>
-  <%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %>
-<br>
-
->>>>>>> efae4e2f8b9917d3eb93442bdcd172994b165a24
 
 <div class="boat">
   <% @boats.each do |boat| %>
-  <h3>NAME: <%= boat.name %></h3>
-  <%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %>
-  <ul>
-    <li>USER ID: <%= boat.user_id %> </li>
-    <li>LOCATION: <%= boat.country_code %></li>
-    <li>CONTAINER CAPACITY: <%= boat.container_capacity %></li>
-  </ul>
+  <h3><%= link_to "#{boat.name}", boat_path(boat) %></h3>
+  <%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %><br>
+  <%= link_to "Click for more about #{boat.name}", boat_path(boat) %>
   <hr />
   <% end %>
 </div>

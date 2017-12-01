@@ -1,20 +1,21 @@
+<h3> <%= @boat.name %></h3>
+<div class="boat-avatar">
+<%= image_tag(@boat.avatar.url) %>
+</div>
+<ul>
+  <li>USER EMAIL: <%= @boat.user.email %> </li>
+  <li>LOCATION: <%= @boat.country_code %></li>
+  <li>CONTAINER CAPACITY: <%= @boat.container_capacity %></li>
+</ul>
+
 <% if @boat.user.id == current_user.id %>
-  <div class="text-center edit-links">
+  <div class="edit-links">
+    <%= link_to "Edit Boat", edit_boat_path(@boat) %> |
+    <%= link_to 'Delete Boat', @boat, :method => :delete %> |
     <%= link_to "Cancel", boats_path %>
-    |
-    <%= link_to "Edit Boat", edit_boat_path(@boat) %>
-    <%= link_to 'Destroy', @boat, :method => :delete %>
   </div>
 <% else %>
   <div class="text-center edit-links">
     <%= link_to "Back", boats_path %>
   </div>
 <% end %>
-
-
-<div class="boat-name">
-  <% @boat.name %>
-</div>
-<div class="boat-avatar">
-<%= image_tag(@boat.avatar.url) %>
-</div>
