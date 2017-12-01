@@ -11,10 +11,14 @@
   </div>
 <% end %>
 
-
+<br>
 <div class="boat-name">
-  <% @boat.name %>
+  <h1><%= @boat.name %></h1>
 </div>
 <div class="boat-avatar">
 <%= image_tag(@boat.avatar.url) %>
 </div>
+<h2>Boat Details</h2>
+<li>Boat ID: <%= @boat.user_id %></li>
+ <li>Boat Location: <%= @boat.country_code %></li>
+ <li>Boat Container capactiy: <%= @boat.container_capacity %></li>
