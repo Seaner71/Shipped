@@ -4,7 +4,7 @@
 <div class="job-name">
   <li>Job name: <%= @job.name %></li>
   <li>Job id: <%= @job.id %></li>
-  <li>Job cost: <%= @job.price_cents %></li>
+  <li>Job cost: <span class="currency_symbol">$</span> <%= @job.price_cents %></li>
    <li>Job origin: <%= @job.origin %></li>
    <li>Job destination: <%= @job.destination %></li>
    <li>Job description: <%= @job.description %></li>
