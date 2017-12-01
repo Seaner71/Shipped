@@ -3,6 +3,11 @@
 
 <div class="boat">
   <% @boats.each do |boat| %>
+
+  <h3><%= link_to "#{boat.name}", boat_path(boat) %></h3>
+  <%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %><br>
+  <%= link_to "Click for more about #{boat.name}", boat_path(boat) %>
+
   <h3>NAME: <%= boat.name %></h3>
   <%= link_to image_tag(boat.avatar.url(:medium)), boat_path(boat) %>
   <ul>
@@ -10,6 +15,7 @@
     <li>LOCATION: <%= boat.country_code %></li>
     <li>CONTAINER CAPACITY: <%= boat.container_capacity %></li>
   </ul>
+
   <hr />
   <% end %>
 </div>

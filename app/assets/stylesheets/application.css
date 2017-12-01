@@ -33,18 +33,33 @@ body {
   padding:15px;
 }
 
+.container img {
+  border: solid #e4f0f3 6px;
+  height: 400px;
+  width: auto;
+}
+
 h1 {
   margin: 20px 0px 20px 0px;
   color: #446ca3;
 }
 
-h3 {
+h3, h3 a {
   margin: 10px 0px;
   color: #239ebb;
 }
 
 ul {
   /*list-style-type: none;*/
+}
+
+a {
+  text-decoration: none;
+  color: #a79647;
+}
+
+a:hover {
+  color: #239ebb;
 }
 
 nav {
@@ -108,7 +123,16 @@ p.notice, p.alert {
   padding: 10px 0px;
 }
 
+.boat img {
+  height: 170px;
+  width: auto;
+}
+
 .boat hr {
   margin-top: 20px;
-  border-bottom: solid 1px #e4dcb7;
+  border: solid 1px #e4dcb7;
+}
+
+.edit-links {
+  margin-top: 20px;
 }
