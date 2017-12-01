@@ -1,10 +1,21 @@
 <% if @user == current_user %>
   <%= link_to 'Edit Profile', edit_profile_path(@user.user_name) %>
   <% end %>
+<br>
+<br>
+  <div class="avatar">THERE SHOULD BE A PROFILE PICTURE HERE.
+    <%= image_tag(@user.avatar.url) %></div>
+<br>
+<div class="user-bio">USER BIO
+   <br>
+  <%= @user.bio %>
+</div>
+<br>
   <h2><%= @user.user_name %>'s Boats</h2>
 <% @boats.each do |boat| %>
   <%= render 'boats/boat', boat: boat %>
 <% end %>
+<br>
 <h2><%= @user.user_name %>'s Jobs</h2>
 <% @jobs.each do |job| %>
   <%= render 'jobs/job', job: job %>

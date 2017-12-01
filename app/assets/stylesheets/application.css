@@ -136,3 +136,10 @@ p.notice, p.alert {
 .edit-links {
   margin-top: 20px;
 }
+
+div.field em {
+ display: block;
+ margin-top: 20px;
+ font-size: 12px;
+ color: #a79647;
+} 
