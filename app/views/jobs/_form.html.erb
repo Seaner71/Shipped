@@ -45,8 +45,17 @@
       <%= form.country_select :destination %>
     </p>
 
-    <p>
-      <%= form.submit %>
-    </p>
+        <%= form.label 'Assign job to boat' %> <br>
+        <% if !current_user.boats.all.empty? %>
+          <%= form.select 'boat_id', options_from_collection_for_select(current_user.boats.all, 'id', 'name') %> <br>
+        <% else %>
+            <p>You have no boats please click here to add one: <%= link_to "add boat", new_boat_path(current_user) %> </p>
+        <% end %>
+
+        <p>
+          <%= form.submit %>
+        </p>
+
+
 
   <% end %>
