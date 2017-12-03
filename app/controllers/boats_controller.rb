@@ -18,8 +18,9 @@ class BoatsController < ApplicationController
   def create
     # @boat = Boat.new(boat_params) //original one
     @boat = current_user.boats.new(boat_params)
+    
     if @boat.save
-      redirect_to '/'
+      redirect_to boat_url(@boat)
     else
       render 'new'
     end

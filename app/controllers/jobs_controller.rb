@@ -22,7 +22,7 @@ class JobsController < ApplicationController
       @job = current_user.jobs.new(job_params)
 
       if @job.save
-        redirect_to '/'
+        redirect_to job_url(@job)
       else
         render 'new'
       end
@@ -35,7 +35,7 @@ class JobsController < ApplicationController
       def update
         @job = Job.find(params[:id])
         if @job.update(job_params)
-        redirect_to @job
+        redirect_to job_url(@job)
       else
         render 'edit'
       end
@@ -44,7 +44,7 @@ class JobsController < ApplicationController
       def destroy
         @job = Job.find(params[:id])
         @job.destroy
-        redirect_to jobs_path
+        redirect_to '/'
       end
 
     private
