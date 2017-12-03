@@ -1,7 +1,7 @@
 class BoatsController < ApplicationController
   before_action :authenticate_user!
   before_action :owned_boat, only: [:edit, :update, :destroy]
-
+ before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
     @boats = Boat.all
@@ -51,6 +51,9 @@ class BoatsController < ApplicationController
     params.require(:boat).permit(:avatar, :name, :country_code, :container_capacity, :user_id )
   end
 
+  def set_boat
+    @boat = Boat.find(params[:id])		
+  end
 
 
   def owned_boat
