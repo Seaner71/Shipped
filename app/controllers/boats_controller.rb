@@ -19,7 +19,7 @@ class BoatsController < ApplicationController
     # @boat = Boat.new(boat_params) //original one
     @boat = current_user.boats.new(boat_params)
     if @boat.save
-      redirect_to boats_path
+      redirect_to '/'
     else
       render 'new'
     end
@@ -32,7 +32,7 @@ class BoatsController < ApplicationController
     def update
       @boat = Boat.find(params[:id])
       if @boat.update(boat_params)
-      redirect_to @boat
+      redirect_to boat_url(@boat)
     else
       render 'edit'
     end

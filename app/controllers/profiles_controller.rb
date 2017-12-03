@@ -5,9 +5,8 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find_by(user_name: params[:user_name])
-    @boats = User.find_by(user_name: params[:user_name]).boats.order('created_at DESC')
-    @jobs = User.find_by(user_name: params[:user_name]).jobs.order('created_at DESC')
-    
+    @boats = current_user.boats.order('created_at DESC')
+    @jobs = current_user.jobs.order('created_at DESC')
   end
 
   def edit
@@ -17,8 +16,7 @@ class ProfilesController < ApplicationController
   def update
     @user = User.find_by(user_name: params[:user_name])
     if @user.update(profile_params)
-      flash[:success] = 'Your profile has been updated!! :)'
-
+      redirect_to profile_path(@user_name)
     else
       @user.errors.full_messages
       flash[:error] = @user.errors.full_messages
@@ -29,7 +27,7 @@ class ProfilesController < ApplicationController
   private
 
  def profile_params
-   params.require(:user).permit(:avatar, :bio, :user_name)
+   params.require(:user).permit(:avatar, :bio)
  end
 
  def owned_profile
