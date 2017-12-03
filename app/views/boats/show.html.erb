@@ -3,7 +3,7 @@
 <%= image_tag(@boat.avatar.url) %>
 </div>
 <ul>
- <li>OWNER: <%= @boat.user.user_name %> </li>
+ <li>OWNER: <%= link_to @boat.user.user_name, profile_path(@boat.user.user_name) %> </li>
   <li>LOCATION: <%= @boat.country_code %></li>
   <li>CONTAINER CAPACITY: <%= @boat.container_capacity %></li>
 </ul>
