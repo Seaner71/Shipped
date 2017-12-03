@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
   def update
     @user = User.find_by(user_name: params[:user_name])
     if @user.update(profile_params)
-      redirect_to profile_path(@user_name)
+      redirect_to profile_url
     else
       @user.errors.full_messages
       flash[:error] = @user.errors.full_messages
