@@ -3,10 +3,10 @@
   <% end %>
 <br>
 <br>
-  <div class="avatar">THERE SHOULD BE A PROFILE PICTURE HERE.
+  <div class="avatar">
     <%= image_tag(@user.avatar.url) %></div>
 <br>
-<div class="user-bio">USER BIO
+<div class="user-bio"><h2>About <%=@user.user_name%></h2>
    <br>
   <%= @user.bio %>
 </div>
