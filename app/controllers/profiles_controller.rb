@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find_by(user_name: params[:user_name])
     @boats = User.find_by(user_name: params[:user_name]).boats.order('created_at DESC')
-     @jobs = User.find_by(user_name: params[:user_name]).jobs.order('created_at DESC')
+    @jobs = User.find_by(user_name: params[:user_name]).jobs.order('created_at DESC')
   end
 
   def edit
