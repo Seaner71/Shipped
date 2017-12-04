@@ -64,7 +64,7 @@ class JobsController < ApplicationController
                  cap_reduce = cap_need
                  Boat.find_by_id(boats[i]).update_attributes(container_capacity: (Boat.find_by_id(boats[i]).container_capacity - cap_need))
               else
-                cr = Boat.find_by_id(boats[i]).container_capacity
+                cap_reduce = Boat.find_by_id(boats[i]).container_capacity
                 Boat.find_by_id(boats[i]).update_attributes(container_capacity: 0)
               end
                cap_need -= cap_reduce
