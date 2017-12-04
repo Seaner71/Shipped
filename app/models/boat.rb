@@ -8,4 +8,6 @@ class Boat < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :name, presence: true
   validates :name, uniqueness: true
+  validates :container_capacity, presence: true
+  validates :container_capacity, numericality: { greater_than: 0}
 end
