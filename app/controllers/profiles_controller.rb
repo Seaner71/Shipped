@@ -7,7 +7,6 @@ class ProfilesController < ApplicationController
     @user = User.find_by(user_name: params[:user_name])
     @boats = User.find_by(user_name: params[:user_name]).boats.order('created_at DESC')
     @jobs = User.find_by(user_name: params[:user_name]).jobs.order('created_at DESC')
-    
   end
 
   def edit
@@ -17,8 +16,7 @@ class ProfilesController < ApplicationController
   def update
     @user = User.find_by(user_name: params[:user_name])
     if @user.update(profile_params)
-      flash[:success] = 'Your profile has been updated!! :)'
-
+      redirect_to profile_url
     else
       @user.errors.full_messages
       flash[:error] = @user.errors.full_messages

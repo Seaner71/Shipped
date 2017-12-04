@@ -1,6 +1,15 @@
-<%= link_to "Cancel", jobs_path %>
-<%= link_to "Edit Job", edit_job_path(@job) %>
-<%= link_to "Delete Job", job_path(@job), method: :delete %>
+
+<% if @job.user.id == current_user.id %>
+  <div class="edit-links">
+    <%= link_to "Edit Job", edit_job_path(@job) %> |
+    <%= link_to 'Delete Job', job_path(@job), :method => :delete %> |
+    <%= link_to "Cancel", '/' %>
+  </div>
+<% else %>
+  <div class="text-center edit-links">
+    <%= link_to "Back", '/' %>
+  </div>
+<% end %>
 <div class="job-name">
   <li>Job name: <%= @job.name %></li>
   <li>Job id: <%= @job.id %></li>

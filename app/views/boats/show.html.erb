@@ -3,7 +3,7 @@
 <%= image_tag(@boat.avatar.url) %>
 </div>
 <ul>
-  <li>USER EMAIL: <%= @boat.user.email %> </li>
+ <li>OWNER: <%= link_to @boat.user.user_name, profile_path(@boat.user.user_name) %> </li>
   <li>LOCATION: <%= @boat.country_code %></li>
   <li>CONTAINER CAPACITY: <%= @boat.container_capacity %></li>
 </ul>
@@ -12,11 +12,10 @@
   <div class="edit-links">
     <%= link_to "Edit Boat", edit_boat_path(@boat) %> |
     <%= link_to 'Delete Boat', @boat, :method => :delete %> |
-    <%= link_to "Cancel", boats_path %>
+    <%= link_to "Boat Index", '/' %>
   </div>
 <% else %>
   <div class="text-center edit-links">
-    <%= link_to "Back", boats_path %>
+    <%= link_to "Back", '/' %>
   </div>
 <% end %>
-

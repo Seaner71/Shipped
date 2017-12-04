@@ -1,7 +1,7 @@
 class BoatsController < ApplicationController
   before_action :authenticate_user!
   before_action :owned_boat, only: [:edit, :update, :destroy]
-  before_action :set_boat, only: [:show, :edit, :update, :destroy]
+ before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
     @boats = Boat.all
@@ -18,8 +18,9 @@ class BoatsController < ApplicationController
   def create
     # @boat = Boat.new(boat_params) //original one
     @boat = current_user.boats.new(boat_params)
+
     if @boat.save
-      redirect_to boats_path
+      redirect_to boat_url(@boat)
     else
       render 'new'
     end
@@ -32,7 +33,7 @@ class BoatsController < ApplicationController
     def update
       @boat = Boat.find(params[:id])
       if @boat.update(boat_params)
-      redirect_to @boat
+      redirect_to boat_url(@boat)
     else
       render 'edit'
     end
@@ -41,7 +42,7 @@ class BoatsController < ApplicationController
     def destroy
       @boat = Boat.find(params[:id])
       @boat.destroy
-      redirect_to boats_path
+      redirect_to '/'
     end
 
   private
@@ -51,8 +52,9 @@ class BoatsController < ApplicationController
   end
 
   def set_boat
-    @boat = Boat.find(params[:id])
+    @boat = Boat.find(params[:id])		
   end
+
 
   def owned_boat
     @boat = Boat.find(params[:id])
