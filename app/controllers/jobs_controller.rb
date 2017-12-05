@@ -22,7 +22,7 @@ class JobsController < ApplicationController
       @job = current_user.jobs.new(job_params)
       boat_cap
       update_capacity
-       if @job.save && boat_cap
+       if @job.save 
         redirect_to job_path(@job)
       else
         render 'new'
@@ -52,13 +52,13 @@ class JobsController < ApplicationController
         @job.boat_ids.each do |b|
           total_cap += Boat.find_by_id(b).container_capacity
         end
-          total_cap > @job.containers_needed ? true : false
+          total_cap >= @job.containers_needed ? true : false
         end
 
       def update_capacity
         cap_need = @job.containers_needed
         boats = @job.boat_ids
-          for i in 0..boats.length
+          for i in 0..boats.length-1
             break if cap_need == 0
               if cap_need < Boat.find_by_id(boats[i]).container_capacity
                  cap_reduce = cap_need
