@@ -23,7 +23,7 @@ class JobsController < ApplicationController
       boat_cap
       update_capacity
        if @job.save && boat_cap
-        redirect_to jobs_path
+        redirect_to job_path(@job)
       else
         render 'new'
       end

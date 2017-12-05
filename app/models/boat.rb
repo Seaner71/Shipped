@@ -9,5 +9,5 @@ class Boat < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :container_capacity, presence: true
-  validates :container_capacity, numericality: { greater_than: 0}
+  validates :container_capacity, numericality: { greater_than_or_equal_to: 0}
 end
